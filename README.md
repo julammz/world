@@ -1,1 +1,1 @@
-Proyecto world con grphql
+Proyecto world con graphql
