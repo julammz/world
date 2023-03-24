@@ -1,8 +1,8 @@
 package com.study.world.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,12 +17,8 @@ import lombok.Setter;
 @Table(name = "countrylanguage")
 public class CountryLanguage {
 
-    @Id
-    @Column(name = "CountryCode", nullable = false)
-    private String countryCode;
-
-    @Column(name = "Language", nullable = false)
-    private String language;
+    @EmbeddedId
+    private CountryLanguageId countryLanguageId;
 
     @Column(name = "IsOfficial", nullable = false)
     private String isOfficial;

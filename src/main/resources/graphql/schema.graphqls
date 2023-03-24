@@ -17,8 +17,16 @@ type City {
     country: Country!
 }
 
+type CountryLanguage {
+    countryCode: String!
+    language: String!
+    isOfficial: Boolean!
+    percentage: Float!
+}
+
 type Query {
     getCountry(code: ID!): Country
     countriesContinent(continent: String!): [Country!]!
     getCity(id: ID!): City
+    getCountryLanguage( countryCode: String! language: String!): CountryLanguage!
 }
