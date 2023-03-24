@@ -9,7 +9,16 @@ type Country {
     governmentForm: String!
 }
 
+type City {
+    id: ID!
+    name: String!
+    district: String!
+    population: Int!
+    country: Country!
+}
+
 type Query {
     getCountry(code: ID!): Country
     countriesContinent(continent: String!): [Country!]!
+    getCity(id: ID!): City
 }

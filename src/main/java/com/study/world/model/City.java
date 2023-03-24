@@ -3,6 +3,8 @@ package com.study.world.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,13 +26,16 @@ public class City {
     @Column(name = "Name", nullable = false)
     private String name;
 
-    @Column(name = "CountryCode", nullable = false)
-    private String countryCode;
-
     @Column(name = "District", nullable = false)
     private String district;
 
     @Column(name = "Population", nullable = false)
     private Integer population;
+
+    /*@Column(name = "CountryCode", nullable = false)
+    private String countryCode;*/
+    @OneToOne
+    @JoinColumn(name = "CountryCode", nullable = false)
+    private Country country;
 
 }
