@@ -1,0 +1,15 @@
+type Country {
+    code: ID!
+    name: String!
+    continent: String!
+    region: String!
+    surfaceArea: Float!
+    population: Int!
+    localName: String!
+    governmentForm: String!
+}
+
+type Query {
+    getCountry(code: ID!): Country
+    countriesContinent(continent: String!): [Country!]!
+}
