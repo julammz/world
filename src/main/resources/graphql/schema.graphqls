@@ -30,3 +30,9 @@ type Query {
     getCity(id: ID!): City
     getCountryLanguage( countryCode: String! language: String!): CountryLanguage!
 }
+
+
+type Mutation {
+    createCountry(code: String!, name: String!, continent: String!, region: String!, surfaceArea: Float!, population: Int!,
+        localName: String!, governmentForm: String!, code2: String!): Country
+}

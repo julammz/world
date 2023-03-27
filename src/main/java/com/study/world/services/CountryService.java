@@ -51,10 +51,10 @@ public class CountryService {
         return countryDTOList;
     }
 
-    public String CreateCountry(CountryDTO countryDTO){
+    public CountryDTO CreateCountry(CountryDTO countryDTO){
         Country country = new Country(countryDTO.getCode(), countryDTO.getName(), countryDTO.getContinent(), countryDTO.getRegion(),
                 countryDTO.getSurfaceArea(), null, countryDTO.getPopulation(), null, null, null, countryDTO.getLocalName(),
-                countryDTO.getGovernmentForm(),null, null,null);
+                countryDTO.getGovernmentForm(),null, null, countryDTO.getCode2());
 
         try{
             countryRepository.save(country);
@@ -62,7 +62,7 @@ public class CountryService {
             return null;
         }
 
-        return countryDTO.getCode();
+        return this.Country(countryDTO.getCode());
     }
 
 }
