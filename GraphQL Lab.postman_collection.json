@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "15861e51-c382-4a51-b7a1-0644321cc9a8",
+		"name": "GraphQL Lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{ \n    getCountry(code: \"AND\" ){\n        code\n        name\n        continent\n        population\n    }\n}",
+						"variables": "{\n    \"code\": \"AND\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Countries by Continent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{ \n    countriesContinent(continent: \"South America\" ){\n        name\n        population        \n    }\n}",
+						"variables": "{\n    \"code\": \"AND\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{ \n    getCity(id: 190 ){\n        name\n        population\n        country {\n            code\n            name            \n        }\n    }\n}",
+						"variables": "{\n    \"code\": \"AND\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Country Language",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{ \n    getCountryLanguage(countryCode: \"ABW\", language: \"Dutch\"){\n        countryCode\n        language\n        isOfficial        \n        percentage\n    }\n}",
+						"variables": "{\n    \"code\": \"AND\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n  createCountry(code: \"WK1\",\n    name: \"Anti Wakanda\",\n    continent: \"Africa\",\n    region: \"Nowhere\",\n    surfaceArea: 100,\n    population: 5200000,\n    localName: \"Wakandianos\",\n    governmentForm: \"Kingdom\",\n    code2: \"W1\"\n  ) {\n    code\n    name\n  }\n}",
+						"variables": "{\n    \"code\": \"AND\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
